@@ -3,50 +3,104 @@
 //Now calculate area. A = SquareRoot(s(s-a)(s-b)(s-c)
 //If triangle is impossible, throw an error.
 
-function CalculateTriangleArea() {
-    var one = parseInt(document.getElementById("side1").value);
-    var two = parseInt(document.getElementById("side2").value);
-    var three = parseInt(document.getElementById("side3").value);
+var title;
+var author;
+var readingStatus;
 
-    var sum = one + two + three;
-    var s = (one + two + three) / 2;
-    var s1 = s - one;
-    var s2 = s - two;
-    var s3 = s - three;
-    var aSquared = s * s1 * s2 * s3;
+var student = {
+    name: "Sam Jackson",
+    class: "C#",
+    courseno: 1501
+};
 
-    var A = Math.sqrt(aSquared);
-    if (isNaN(A)) {
-        document.getElementById("answer1").innerHTML = "Invalid Triangle";
+function CreateJQObjects() {
+    title = $('.booktitle');
+    author = $('.author');
+    readingStatus = $('.readingStatus');
+    console.log(title);
+    console.log(author);
+    console.log(readingStatus);
+}
+
+
+function JavascriptObject() {
+    if (student.name == null && student.class == null && student.courseno == null) {
+        console.log("There is no data in the student entry.");
     } else {
-        document.getElementById("answer1").innerHTML = "Your Triangle Area is: " + A;
+        console.log("Here is the student's information logged to the console:");
+        if (student.name != null) {
+            console.log(student.name);
+        }
+        if (student.class != null) {
+            console.log(student.class);
+        }
+        if (student.courseno != null) {
+            console.log(student.courseno);
+        }
+    }
+
+}
+
+function DeleteName() {
+    delete student.name;
+    console.log("Student name deleted!");
+    JavascriptObject();
+}
+
+function DeleteClass() {
+    delete student.class;
+    console.log("Student class deleted!");
+    JavascriptObject();
+}
+
+function DeleteCourseNo() {
+    delete student.courseno;
+    console.log("Student course number deleted!");
+    JavascriptObject();
+}
+
+function LogJQueryObjects() {
+    // for (i = 0; i < title.length; i++) {} **WIL TRY TO MAKE DYNAMIC LENGTH LATER
+    if (readingStatus.get(0).outerText == "Read") {
+        console.log("Already read " + title.get(0).outerText + " by " + author.get(0).outerText + ".");
+    } else {
+        console.log("You still need to read " + title.get(0).outerText + " by " + author.get(0).outerText + ".");
+    }
+
+    if (readingStatus.get(1).outerText == "Read") {
+        console.log("Already read " + title.get(1).outerText + " by " + author.get(1).outerText + ".");
+    } else {
+        console.log("You still need to read " + title.get(1).outerText + " by " + author.get(1).outerText + ".");
+    }
+
+    if (readingStatus.get(2).outerText == "Read") {
+        console.log("Already read " + title.get(2).outerText + " by " + author.get(2).outerText + ".");
+    } else {
+        console.log("You still need to read " + title.get(2).outerText + " by " + author.get(2).outerText + ".");
     }
 }
 
-function RandomNumberGame() {
-    var number = parseInt(document.getElementById("number").value);
-    if (number < 1 || number > 10) {
-        document.getElementById("answer2").innerHTML = "Bad guess! Guess between 1 and 10. Try Again.";
+function isNumberCloseTo100() {
+    var number = document.getElementById("usernumber").value;
+    console.log(number);
+    if (number < 90) {
+        return false;
+    }
+    if (number % 100 == 0) {
+        return true;
+    } else if (number % 100 >= 90) {
+        return true;
+    } else if (number % 100 <= 10) {
+        return true;
     } else {
-        var random = Math.floor(Math.random() * 10);
-        while (random == 0) {
-            random = Math.floor(Math.random() * 10);
-        }
-        if (number == random) {
-            document.getElementById("answer2").innerHTML = "Correct! The number was " + random;
-        } else {
-            document.getElementById("answer2").innerHTML = "Incorrect! The number was " + random;
-        }
+        return false;
     }
 }
 
-function FindDaysTilChristmas() {
-    today = new Date();
-    var cmas = new Date(today.getFullYear(), 11, 25);
-    if (today.getMonth() == 11 && today.getDate() > 25) {
-        cmas.setFullYear(cmas.getFullYear() + 1);
+function TestNumber() {
+    if (isNumberCloseTo100() == true) {
+        document.getElementById("answer2").innerHTML = "The number is close to 100";
+    } else {
+        document.getElementById("answer2").innerHTML = "The number is not close to 100";
     }
-    var one_day = 1000 * 60 * 60 * 24;
-    document.getElementById("answer3").innerHTML = (Math.ceil((cmas.getTime() - today.getTime()) / (one_day)) +
-    " days left until Christmas!");
 }

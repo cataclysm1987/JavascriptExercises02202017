@@ -1,7 +1,7 @@
 ﻿﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Javascript Exercises - 2-16-2017</title>
+    <title>Javascript Exercises - 2-20-2017</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -11,6 +11,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Scripts for application-->
     <script src="scripts/scripts.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            CreateJQObjects();
+        });
+    </script>
 
 </head>
 <body>
@@ -28,27 +34,35 @@
     <div class="jumbotron">
         <div class="container title-container">
             <h1>Javascript Exercises</h1>
-            <p class="lead">These exercises were completed February 16th, 2017</p>
+            <p class="lead">These exercises were completed February 20th, 2017</p>
         </div>
     </div>
     <div class="container content-container">
-        <h1>Write a JavaScript function to find the area of a triangle.</h1>
+        <h1>Write a JavaScript program to list the properties of a JavaScript object.</h1>
+        <button class="btn-primary" id="exercise1" onclick="JavascriptObject()">Click to log the student data to the console.</button>
+        <button class="btn-primary" id="exercise1" onclick="DeleteName()">Click to delete the name and log to the console.</button>
+        <button class="btn-primary" id="exercise1" onclick="DeleteClass()">Click to delete the class and log to the console.</button>
+        <button class="btn-primary" id="exercise1" onclick="DeleteCourseNo()">Click to course number and log to the console.</button>
+        <h1>Get & display information from a jQuery object</h1>
+        <h2>Book 1:</h2>
+        <h3 class="booktitle">Twilight</h3>
+        <h3 class="author">Stephenie Meyer</h3>
+        <h3 class="readingStatus">Read</h3>
+        <h2>Book 2:</h2>
+        <h3 class="booktitle">Harry Potter</h3>
+        <h3 class="author">J.K. Rowling</h3>
+        <h3 class="readingStatus">Read</h3>
+        <h2>Book 3: </h2>
+        <h3 class="booktitle">Mockingjay: The Final Book of The Hunger Games</h3>
+        <h3 class="author">Suzanne Collins</h3>
+        <h3 class="readingStatus">Not Read</h3>
+        <button class="btn-primary" onclick="LogJQueryObjects()">Click here to log the elements above to the console as JQuery objects</button>
+        <h1>Given an int (n), write a JavaScript program that will return “true” if it is within 10 of 100 or 200. </h1>
         <form>
-            Side 1: <input type="text" name="side1" value="3" id="side1"><br>
-            Side 2: <input type="text" name="side2" value="4" id="side2"><br>
-            Side 3: <input type="text" name="side3" value="5" id="side3"><br>
+            Enter a Number: <input type="text" name="number" id="usernumber"><br>
         </form>
-        <button id="calculate" class="btn-primary" onclick ="CalculateTriangleArea()">Calculate your Triangle Area</button>
-        <h3 id="answer1"></h3>
-        <h1>Write a JavaScript function where the program takes a random integer between 1 to 10. Prompt the user is to input a number. If the user input is correct, display a message "You are correct" if not display "Try again"</h1>
-        <form>
-            Enter a Guess From 1 to 10: <input type="text" name="side1" value="3" id="number"><br>
-        </form>
-        <button id="number" class="btn-primary" onclick="RandomNumberGame()">Guess The Random Number!</button>
-        <h3 id="answer2"></h3>
-        <h1>Write a JavaScript function that will calculate and display how many days left until Christmas.</h1>
-        <button id="christmas" class="btn-primary" onclick="FindDaysTilChristmas()">Calculate the Days Til Christmas!</button>
-        <h3 id="answer3"></h3>
+        <button class="btn-primary" onclick="TestNumber()">Click here to determine if the number is close to 100</button>
+        <h2 id="answer2"></h2>
     </div>
 </body>
 </html>
