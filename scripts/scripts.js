@@ -104,7 +104,7 @@ function isNumberCloseTo100() {
 }
 
 function TestNumber() {
-    if (isNaN(document.getElementById("usernumber").value) == true) {
+    if (isNaN(document.getElementById("usernumber").value) == true || document.getElementById("usernumber").value == "") {
         document.getElementById("answer2").innerHTML = "Invalid entry. Please enter a number.";
     } else if (isNumberCloseTo100() == true) {
         document.getElementById("answer2").innerHTML = "The number is close to 100.";
