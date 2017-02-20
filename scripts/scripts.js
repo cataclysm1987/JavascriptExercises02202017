@@ -89,7 +89,6 @@ function LogJQueryObjects() {
 
 function isNumberCloseTo100() {
     var number = document.getElementById("usernumber").value;
-    console.log(number);
     if (number < 90) {
         return false;
     }
