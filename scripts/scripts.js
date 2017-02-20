@@ -17,9 +17,6 @@ function CreateJQObjects() {
     title = $('.booktitle');
     author = $('.author');
     readingStatus = $('.readingStatus');
-    console.log(title);
-    console.log(author);
-    console.log(readingStatus);
 }
 
 
@@ -42,21 +39,31 @@ function JavascriptObject() {
 }
 
 function DeleteName() {
-    delete student.name;
-    console.log("Student name deleted!");
-    JavascriptObject();
+    if (student.name != null) {
+        delete student.name;
+        console.log("Student name deleted!");
+    } else {
+        console.log("Student name has already been deleted.");
+    }
+    
 }
 
 function DeleteClass() {
-    delete student.class;
-    console.log("Student class deleted!");
-    JavascriptObject();
+    if (student.class != null) {
+        delete student.class;
+        console.log("Student class deleted!");
+    } else {
+        console.log("Student class has already been deleted.");
+    }
 }
 
 function DeleteCourseNo() {
-    delete student.courseno;
-    console.log("Student course number deleted!");
-    JavascriptObject();
+    if (student.courseno != null) {
+        delete student.courseno;
+        console.log("Student course number deleted!");
+    } else {
+        console.log("Student course number has already been deleted.");
+    }
 }
 
 function LogJQueryObjects() {
